@@ -1,0 +1,92 @@
+{
+  "kids": {
+    "characters": [
+      "curious child", "friendly robot", "talking animal", "brave explorer", "magical fairy",
+      "space pirate", "kind witch", "superhero squirrel", "tiny dragon", "lost alien",
+      "singing mermaid", "ghostly friend", "inventor kid", "royal penguin", "treehouse guardian",
+      "skydiving puppy", "sleepy monster", "laughing cloud", "baby unicorn", "detective duck",
+      "twin magicians", "candy wizard", "robot teddy bear", "miniature knight", "bubble alchemist"
+    ],
+    "settings": [
+      "enchanted forest", "space station", "underwater kingdom", "magical school", "cloud city",
+      "giant treehouse", "hidden volcano", "crystal cave", "floating island", "robot factory",
+      "toy workshop", "rainbow jungle", "invisible village", "marshmallow mountain", "chocolate river",
+      "alien zoo", "dream library", "submarine garden", "time-loop playground", "frozen desert",
+      "giant’s attic", "music box world", "mirror maze", "friendly haunted house", "fizzy soda sea"
+    ],
+    "events": [
+      "finds a treasure map", "discovers a secret door", "makes a new friend", "learns a special power", "solves a mystery",
+      "rescues a trapped animal", "saves the day with kindness", "rides a comet", "transforms into something magical", "flies without wings",
+      "hears a voice from a crystal", "gets shrunk by accident", "helps a lonely robot", "accidentally opens a portal", "builds a time machine",
+      "becomes invisible for a day", "finds a magic cookbook", "paints the sky", "reverses gravity", "talks to the moon",
+      "wins a wish", "grows a candy tree", "befriends a shadow", "stops a storm with music", "clones themselves"
+    ],
+    "objects": [
+      "magic wand", "talking toy", "special key", "glowing stone", "flying carpet",
+      "invisibility hat", "robotic butterfly", "bouncing boots", "enchanted crayon", "cloud in a jar",
+      "singing seashell", "mini volcano", "potion bottle", "self-writing book", "teleporting marble",
+      "laughing mirror", "star-catching net", "mood-changing ring", "puzzle cube", "growing jellybean",
+      "bubble-blowing watch", "secret decoder", "fizzy ink pen", "floating scooter", "time-freezing hourglass"
+    ]
+  },
+  "teens": {
+    "characters": [
+      "rebellious teenager", "young inventor", "aspiring musician", "high school detective", "exchange student",
+      "reluctant hero", "tech genius", "aspiring actor", "skater with secrets", "witch-in-training",
+      "junior journalist", "quiet gamer", "part-time hacker", "eco-activist", "student council outcast",
+      "dreamy poet", "underground artist", "mysterious transfer", "track team rival", "drama club lead",
+      "ghost-hunting duo", "basketball prodigy", "time-displaced teen", "sci-fi podcaster", "comic book writer"
+    ],
+    "settings": [
+      "abandoned mall", "summer camp", "high school", "small town", "virtual reality world",
+      "rooftop garden", "haunted library", "music festival", "after-school robotics lab", "roller rink",
+      "city skatepark", "boardwalk arcade", "underground tunnel", "train station at midnight", "secret tree fort",
+      "online game world", "dream dimension", "student film set", "museum at night", "sci-fi convention",
+      "radio station", "urban ruins", "group therapy circle", "college fair", "mystery escape room"
+    ],
+    "events": [
+      "uncovers a conspiracy", "competes in a contest", "stands up to a bully", "falls in love", "discovers a hidden talent",
+      "witnesses a crime", "runs away for a night", "crashes a secret meeting", "fakes their identity", "writes a viral song",
+      "builds a new app", "loses everything in a moment", "finds a cryptic message", "trains for a showdown", "gets expelled unjustly",
+      "starts a protest", "leads a team to victory", "connects with an ancestor", "makes a dangerous deal", "defies the system",
+      "writes a revealing blog", "saves a friend in crisis", "joins a secret club", "unlocks latent powers", "questions their identity"
+    ],
+    "objects": [
+      "mysterious journal", "vintage camera", "smart device", "family heirloom", "rare book",
+      "glowing graffiti marker", "ring with a secret", "USB with hidden files", "retro walkman", "cybernetic glove",
+      "audio recorder", "missing student ID", "tattoo map", "encrypted diary", "trick coin",
+      "school keycard", "old mixtape", "outdated laptop", "mysterious necklace", "painted mask",
+      "broken phone with evidence", "flash drive", "haunted photo", "tattered hoodie", "symbolic pin"
+    ]
+  },
+  "adults": {
+    "characters": [
+      "shy librarian", "time-traveling detective", "sentient robot", "former spy", "struggling artist",
+      "washed-up musician", "burned-out teacher", "paranormal investigator", "cryptid hunter", "journalist in exile",
+      "haunted war vet", "fugitive scientist", "cursed immortal", "space archaeologist", "undercover agent",
+      "deep-sea diver", "hacker-for-hire", "retired magician", "alien anthropologist", "dream analyst",
+      "bartender with a past", "fortune teller", "exorcist priest", "ghostwriter", "clone in hiding"
+    ],
+    "settings": [
+      "abandoned amusement park", "underwater lab", "moon colony", "dystopian city", "remote island",
+      "war-ravaged capital", "flooded subway", "foggy mountain town", "underground base", "ancient ruins",
+      "space casino", "dream marketplace", "parallel dimension", "dark forest on the edge of time", "bio-dome habitat",
+      "snowbound train", "desert commune", "floating prison", "orbital junkyard", "mansion with locked wings",
+      "cyberpunk alley", "luxury bunker", "silent monastery", "ghost-infested ship", "burned library"
+    ],
+    "events": [
+      "finds a mysterious key", "encounters a sentient AI", "is trapped in a storm", "receives an unexpected inheritance", "witnesses a strange phenomenon",
+      "wakes up with no memory", "triggers an ancient curse", "gets framed for a crime", "meets their future self", "falls into another timeline",
+      "discovers an alien signal", "gets haunted by a past mistake", "exposes a cult", "loses their shadow", "inherits a hidden lab",
+      "revives a forbidden ritual", "unearths buried trauma", "faces their doppelganger", "escapes a collapsing reality", "takes one final job",
+      "steals time itself", "enters a dream willingly", "fights in a secret war", "is betrayed by a lover", "awakens an ancient being"
+    ],
+    "objects": [
+      "antique locket", "enchanted compass", "talking cat", "experimental technology", "cursed artifact",
+      "holographic map", "time-slowing ring", "strange tattoo", "glass tablet", "bloodstained ledger",
+      "watch that counts down", "old photo that changes", "weather-controlling cane", "ringing phone with no caller", "cybernetic eye",
+      "relic from a lost city", "ancient manuscript", "blackout-inducing drink", "soul trap crystal", "burning letter",
+      "VR headset with no off switch", "mirror shard", "light-reactive ink", "suitcase full of sand", "coin that always lands on edge"
+    ]
+  }
+}

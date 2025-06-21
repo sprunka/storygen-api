@@ -2,8 +2,8 @@
 
 namespace Tests;
 
-use App\Services\ComponentCombiner;
-use App\Services\ComponentValidator;
+use StoryGen\Services\ComponentCombiner;
+use StoryGen\Services\ComponentValidator;
 use PHPUnit\Framework\TestCase;
 
 class ComponentCombinerTest extends TestCase
@@ -156,7 +156,7 @@ class ComponentCombinerTest extends TestCase
         $adjectives = ['curious', 'friendly', 'brave'];
         $nouns = ['child', 'robot', 'explorer'];
         $result = $this->combiner->generateRandomCharacter($adjectives, $nouns);
-        
+
         // Check that the result is a string and contains one of the adjectives and one of the nouns
         $this->assertIsString($result);
         $this->assertMatchesRegularExpression('/^(curious|friendly|brave) (child|robot|explorer)$/', $result);
@@ -185,7 +185,7 @@ class ComponentCombinerTest extends TestCase
         $adjectives = ['enchanted', 'hidden', 'crystal'];
         $nouns = ['forest', 'cave', 'island'];
         $result = $this->combiner->generateRandomSetting($adjectives, $nouns);
-        
+
         // Check that the result is a string and contains one of the adjectives and one of the nouns
         $this->assertIsString($result);
         $this->assertMatchesRegularExpression('/^(enchanted|hidden|crystal) (forest|cave|island)$/', $result);
@@ -204,7 +204,7 @@ class ComponentCombinerTest extends TestCase
         $verbs = ['finds', 'discovers', 'creates'];
         $objects = ['a treasure map', 'a secret door', 'a new friend'];
         $result = $this->combiner->generateRandomEvent($verbs, $objects, []);
-        
+
         // Check that the result is a string and contains one of the verbs and one of the objects
         $this->assertIsString($result);
         $this->assertMatchesRegularExpression('/^(finds|discovers|creates) (a treasure map|a secret door|a new friend)$/', $result);
@@ -212,7 +212,7 @@ class ComponentCombinerTest extends TestCase
         // Test generating a random event with modifiers
         $modifiers = ['accidentally', 'suddenly', 'magically'];
         $result = $this->combiner->generateRandomEvent($verbs, $objects, $modifiers, 1.0); // 100% chance of using a modifier
-        
+
         // Check that the result is a string and contains one of the verbs, one of the modifiers, and one of the objects
         $this->assertIsString($result);
         $this->assertMatchesRegularExpression('/^(finds|discovers|creates) (accidentally|suddenly|magically) (a treasure map|a secret door|a new friend)$/', $result);
@@ -231,7 +231,7 @@ class ComponentCombinerTest extends TestCase
         $qualities = ['magic', 'glowing', 'ancient'];
         $items = ['wand', 'stone', 'book'];
         $result = $this->combiner->generateRandomObject($qualities, $items);
-        
+
         // Check that the result is a string and contains one of the qualities and one of the items
         $this->assertIsString($result);
         $this->assertMatchesRegularExpression('/^(magic|glowing|ancient) (wand|stone|book)$/', $result);
@@ -254,7 +254,7 @@ class ComponentCombinerTest extends TestCase
             'nouns' => ['child', 'robot', 'explorer']
         ];
         $result = $this->combiner->generateRandomElements('character', $components, 2);
-        
+
         // Check that the result is an array of 2 strings
         $this->assertIsArray($result);
         $this->assertCount(2, $result);
@@ -269,7 +269,7 @@ class ComponentCombinerTest extends TestCase
             'nouns' => ['forest', 'cave', 'island']
         ];
         $result = $this->combiner->generateRandomElements('setting', $components, 2);
-        
+
         // Check that the result is an array of 2 strings
         $this->assertIsArray($result);
         $this->assertCount(2, $result);
@@ -285,7 +285,7 @@ class ComponentCombinerTest extends TestCase
             'modifiers' => ['accidentally', 'suddenly', 'magically']
         ];
         $result = $this->combiner->generateRandomElements('event', $components, 2);
-        
+
         // Check that the result is an array of 2 strings
         $this->assertIsArray($result);
         $this->assertCount(2, $result);
@@ -304,7 +304,7 @@ class ComponentCombinerTest extends TestCase
             'items' => ['wand', 'stone', 'book']
         ];
         $result = $this->combiner->generateRandomElements('object', $components, 2);
-        
+
         // Check that the result is an array of 2 strings
         $this->assertIsArray($result);
         $this->assertCount(2, $result);

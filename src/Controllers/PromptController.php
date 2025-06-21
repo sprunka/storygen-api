@@ -3,15 +3,12 @@
 namespace App\Controllers;
 
 use App\Services\PromptGenerator;
+use OpenApi\Annotations as OA;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 /**
- * @OA\Info(
- *     title="Story Prompts API",
- *     version="1.0.0",
- *     description="API for generating randomized story prompts"
- * )
+ * Controller for story prompt generation endpoints
  */
 class PromptController
 {
@@ -35,6 +32,7 @@ class PromptController
      *
      * @OA\Get(
      *     path="/api/prompts",
+     *     tags={"prompts"},
      *     summary="Get a complete story prompt",
      *     description="Returns a full prompt with a Character + Setting + Event + Object schema. Each category can contain multiple elements generated from modular components.",
      *     @OA\Parameter(
@@ -124,6 +122,7 @@ class PromptController
      *
      * @OA\Get(
      *     path="/api/prompts/cards",
+     *     tags={"prompts"},
      *     summary="Get a random card of a specific type",
      *     description="Returns a single-element card. The element is generated from modular components.",
      *     @OA\Parameter(
@@ -185,6 +184,7 @@ class PromptController
      *
      * @OA\Get(
      *     path="/api/prompts/dice",
+     *     tags={"prompts"},
      *     summary="Generate multiple random cards",
      *     description="Returns cards as an object to simulate dice rolls. Each card is generated from modular components.",
      *     @OA\Parameter(
@@ -246,6 +246,7 @@ class PromptController
      *
      * @OA\Get(
      *     path="/api/components",
+     *     tags={"components"},
      *     summary="Get individual components by type",
      *     description="Returns an array of individual components (adjectives, nouns, verbs, etc.) for a specific category",
      *     @OA\Parameter(

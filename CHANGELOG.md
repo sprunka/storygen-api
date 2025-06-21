@@ -14,6 +14,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Unit and integration tests
 
 ### Changed
+- Restructured project to follow a more organized architecture:
+  - Changed namespace from `App` to `StoryGen`
+  - Reorganized directory structure with dedicated config directory
+  - Separated configuration into dedicated files
+  - Created AbstractController base class
+  - Moved Swagger documentation to dedicated Docs directory
+- Downgraded Swagger-PHP from v5.1.3 to v3.3 for better compatibility
+- Updated tests to use new namespace and structure
 
 ### Deprecated
 

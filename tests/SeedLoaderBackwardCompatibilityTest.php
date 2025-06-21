@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\Services\SeedLoader;
+use StoryGen\Services\SeedLoader;
 use PHPUnit\Framework\TestCase;
 
 class SeedLoaderBackwardCompatibilityTest extends TestCase

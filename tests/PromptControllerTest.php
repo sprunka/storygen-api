@@ -1,9 +1,9 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use App\Controllers\PromptController;
-use App\Services\PromptGenerator;
-use App\Services\SeedLoader;
+use StoryGen\Controllers\PromptController;
+use StoryGen\Services\PromptGenerator;
+use StoryGen\Services\SeedLoader;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\StreamInterface;
@@ -74,7 +74,7 @@ class PromptControllerTest extends TestCase
             'setting' => 'test setting',
             'event' => 'test event',
             'object' => 'test object'
-        ]);
+        ], JSON_PRETTY_PRINT);
         $this->stream->expects($this->once())->method('write')->with($expectedJson);
 
         // Test the controller method
@@ -95,7 +95,7 @@ class PromptControllerTest extends TestCase
             'setting' => 'test setting',
             'event' => 'test event',
             'object' => 'test object'
-        ]);
+        ], JSON_PRETTY_PRINT);
         $this->stream->expects($this->once())->method('write')->with($expectedJson);
 
         // Test the controller method
@@ -114,7 +114,7 @@ class PromptControllerTest extends TestCase
         $expectedJson = json_encode([
             'tableTitle' => 'Character Card',
             'character' => 'test card'
-        ]);
+        ], JSON_PRETTY_PRINT);
         $this->stream->expects($this->once())->method('write')->with($expectedJson);
 
         // Test the controller method
@@ -130,7 +130,7 @@ class PromptControllerTest extends TestCase
         $this->request->method('getQueryParams')->willReturn([]);
 
         // Set up expectations for write method and withStatus method
-        $expectedJson = json_encode(['error' => 'Type parameter is required']);
+        $expectedJson = json_encode(['error' => 'Type parameter is required'], JSON_PRETTY_PRINT);
         $this->stream->expects($this->once())->method('write')->with($expectedJson);
         $this->response->expects($this->once())->method('withStatus')->with(400);
 
@@ -154,7 +154,7 @@ class PromptControllerTest extends TestCase
                 'setting' => 'test setting',
                 'event' => 'test event'
             ]
-        ]);
+        ], JSON_PRETTY_PRINT);
         $this->stream->expects($this->once())->method('write')->with($expectedJson);
 
         // Test the controller method
@@ -170,7 +170,7 @@ class PromptControllerTest extends TestCase
         $this->request->method('getQueryParams')->willReturn(['count' => '20']);
 
         // Set up expectations for write method and withStatus method
-        $expectedJson = json_encode(['error' => 'Count must be between 1 and 10']);
+        $expectedJson = json_encode(['error' => 'Count must be between 1 and 10'], JSON_PRETTY_PRINT);
         $this->stream->expects($this->once())->method('write')->with($expectedJson);
         $this->response->expects($this->once())->method('withStatus')->with(400);
 

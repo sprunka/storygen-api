@@ -2,10 +2,10 @@
 
 namespace Tests;
 
-use App\Services\ComponentCombiner;
-use App\Services\ComponentValidator;
-use App\Services\PromptGenerator;
-use App\Services\SeedLoader;
+use StoryGen\Services\ComponentCombiner;
+use StoryGen\Services\ComponentValidator;
+use StoryGen\Services\PromptGenerator;
+use StoryGen\Services\SeedLoader;
 use PHPUnit\Framework\TestCase;
 
 class PromptGeneratorTest extends TestCase

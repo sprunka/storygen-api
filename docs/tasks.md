@@ -8,7 +8,7 @@ This document contains a list of actionable improvement tasks for the StoryPromp
 2. [x] Add CONTRIBUTING.md with guidelines for contributing to the project
 3. [x] Add CODE_OF_CONDUCT.md to establish community guidelines
 4. [x] Create API documentation using Swagger UI to visualize the OpenAPI specification with endpoint at `/openapi.json`
-5. [ ] Add PHPDoc comments to all classes and methods that are missing them
+5. [x] Add PHPDoc comments to all classes and methods that are missing them
 6. [x] Create a CHANGELOG.md file to track version changes
 7. [x] Verify or add the MIT license file in the root of the repository
 
@@ -22,17 +22,17 @@ This document contains a list of actionable improvement tasks for the StoryPromp
 13. [ ] Refactor PromptGenerator to use strategy pattern for different generation methods
 14. [ ] Implement a logging system for API requests and errors
 15. [ ] Add request validation middleware using a validation library
-16. [ ] Set up a code linter for PSR-12 compliance
+16. [x] Set up a code linter for PSR-12 compliance
 
 ## Core Functionality Requirements
 
-17. [ ] Implement the `count` parameter and default 1-3 randomized entries behavior for prompt generation
-18. [ ] Implement proper handling of invalid age groups (treat as 'any' age group)
-19. [ ] Implement additional GET routes for data exploration (e.g., `/data/{age_group}/{category}`)
+17. [x] Implement the `count` parameter and default 1-3 randomized entries behavior for prompt generation
+18. [x] Implement proper handling of invalid age groups (treat as 'any' age group)
+19. [x] Implement additional GET routes for data exploration (e.g., `/data/{age_group}/{category}`)
 
 ## Error Handling and Validation
 
-20. [ ] Add validation for seed.json structure during application bootstrap
+20. [x] Add validation for seed.json structure during application bootstrap (OBE)
 21. [ ] Implement more specific exception classes for different error types
 22. [ ] Add validation for query parameters in all endpoints
 23. [ ] Standardize error response format across all endpoints
@@ -45,17 +45,17 @@ This document contains a list of actionable improvement tasks for the StoryPromp
 27. [x] Add unit tests for PromptGenerator class
 28. [x] Add integration tests for API endpoints
 29. [ ] Implement code coverage reporting
-30. [ ] Add static analysis tools (PHPStan, Psalm)
+30. [x] Add static analysis tools (PHPStan, ~~Psalm~~)
 31. [ ] Set up continuous integration with GitHub Actions or similar
-32. [ ] Add performance benchmarks for API endpoints
+32. [x] Add performance benchmarks for API endpoints
 
 ## Performance Optimization
 
-33. [ ] Implement caching for frequently requested prompts
+33. [x] Implement caching for frequently requested prompts (Will NOT do)
 34. [ ] Optimize SeedLoader::getAllElementsByType to avoid duplicating elements
 35. [ ] Add a method to refresh the cache if the seed data file changes
-36. [ ] Implement pagination for endpoints that return large datasets
-37. [ ] Add compression for API responses
+36. [x] Implement pagination for endpoints that return large datasets (Will NOT do)
+37. [x] Add compression for API responses
 38. [ ] Optimize JSON encoding/decoding with a faster library
 
 ## Feature Enhancements

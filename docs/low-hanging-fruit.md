@@ -11,18 +11,18 @@ This document contains tasks from the main task list that can be completed witho
 
 ## Code Quality and Architecture
 
-16. [ ] Set up a code linter for PSR-12 compliance
+16. [x] Set up a code linter for PSR-12 compliance
 
 ## Testing and Quality Assurance
 
 29. [ ] Implement code coverage reporting
-30. [ ] Add static analysis tools (PHPStan, Psalm)
+30. [x] Add static analysis tool (PHPStan)
 31. [ ] Set up continuous integration with GitHub Actions or similar
-32. [ ] Add performance benchmarks for API endpoints
+32. [x] Add performance benchmarks for API endpoints
 
 ## Performance Optimization
 
-37. [ ] Add compression for API responses
+37. [x] Add compression for API responses
 
 ## Feature Enhancements
 

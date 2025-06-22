@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Support for age group filtering (kids, teens, adults)
 - OpenAPI documentation at `/openapi.json`
 - Unit and integration tests
+- Code linter for PSR-12 compliance with PHP_CodeSniffer
+- Static analysis tool (PHPStan) for code quality
+- Performance benchmarking script for API endpoints
+- Response compression middleware for improved performance
 
 ### Changed
 - Restructured project to follow a more organized architecture:
@@ -28,6 +32,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 ### Fixed
+- Fixed an issue with the compression middleware that caused the OpenAPI documentation endpoint (`/openapi.json`) to return a "net::ERR_CONTENT_DECODING_FAILED" error in browsers
+- Updated PHPStan configuration to replace deprecated `checkMissingIterableValueType` option with the recommended `ignoreErrors` approach and increased memory limit to prevent crashes during analysis
 
 ### Security
 

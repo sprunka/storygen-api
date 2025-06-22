@@ -232,7 +232,10 @@ class PromptGeneratorTest extends TestCase
                     $this->assertContains($card[$type], ['enchanted forest', 'space station', 'underwater kingdom']);
                     break;
                 case 'event':
-                    $this->assertContains($card[$type], ['finds a treasure map', 'discovers a secret door', 'makes a new friend']);
+                    $this->assertContains(
+                        $card[$type],
+                        ['finds a treasure map', 'discovers a secret door', 'makes a new friend']
+                    );
                     break;
                 case 'object':
                     $this->assertContains($card[$type], ['magic wand', 'talking toy', 'special key']);
@@ -372,16 +375,28 @@ class PromptGeneratorTest extends TestCase
             // Check that the element is one of the expected values
             switch ($type) {
                 case 'character':
-                    $this->assertContains($element, ['curious child', 'friendly robot', 'brave explorer']);
+                    $this->assertContains(
+                        $element,
+                        ['curious child', 'friendly robot', 'brave explorer']
+                    );
                     break;
                 case 'setting':
-                    $this->assertContains($element, ['enchanted forest', 'space station', 'underwater kingdom']);
+                    $this->assertContains(
+                        $element,
+                        ['enchanted forest', 'space station', 'underwater kingdom']
+                    );
                     break;
                 case 'event':
-                    $this->assertContains($element, ['finds a treasure map', 'discovers a secret door', 'makes a new friend']);
+                    $this->assertContains(
+                        $element,
+                        ['finds a treasure map', 'discovers a secret door', 'makes a new friend']
+                    );
                     break;
                 case 'object':
-                    $this->assertContains($element, ['magic wand', 'talking toy', 'special key']);
+                    $this->assertContains(
+                        $element,
+                        ['magic wand', 'talking toy', 'special key']
+                    );
                     break;
             }
         }

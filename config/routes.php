@@ -1,17 +1,11 @@
 <?php
 
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
-use Slim\App;
-use Slim\Interfaces\RouteCollectorProxyInterface as Group;
-use StoryGen\Controllers\PromptController;
-use StoryGen\Docs\Swagger;
-
 /**
  * @OA\Info(
  *     title="Story Prompts API",
  *     version="1.0.0",
- *     description="A RESTful PHP API service that delivers randomized story prompts by combining elements—characters, settings, events, objects—based on a flexible JSON schema.",
+ *     description="A RESTful PHP API service that delivers randomized story prompts by combining elements—characters,
+ *                  settings, events, objects—based on a flexible JSON schema.",
  *     @OA\Contact(
  *         email="sprunka@gmail.com",
  *         name="Sean Prunka"
@@ -22,6 +16,13 @@ use StoryGen\Docs\Swagger;
  *     )
  * )
  */
+
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
+use Slim\App;
+use Slim\Interfaces\RouteCollectorProxyInterface as Group;
+use StoryGen\Controllers\PromptController;
+use StoryGen\Docs\Swagger;
 
 /**
  * Routes configuration
@@ -59,14 +60,14 @@ return function (App $app) {
         $group->group('/prompts', function (Group $group) {
             // Get a complete story prompt
             $group->get('', PromptController::class . ':getPrompt');
-            
+
             // Get a random card of a specific type
             $group->get('/cards', PromptController::class . ':getCard');
-            
+
             // Get multiple random cards (simulating dice rolls)
             $group->get('/dice', PromptController::class . ':getDiceRolls');
         });
-        
+
         // Components endpoint
         $group->get('/components', PromptController::class . ':getComponents');
     });

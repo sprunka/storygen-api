@@ -90,14 +90,22 @@ class PromptGenerator
             'adjectives' => $this->seedLoader->getModularComponents($ageGroup, 'characters', 'adjectives'),
             'nouns' => $this->seedLoader->getModularComponents($ageGroup, 'characters', 'nouns')
         ];
-        $prompt['character'] = $this->componentCombiner->generateRandomElements('character', $characterComponents, $count);
+        $prompt['character'] = $this->componentCombiner->generateRandomElements(
+            'character',
+            $characterComponents,
+            $count
+        );
 
         // Generate settings
         $settingComponents = [
             'adjectives' => $this->seedLoader->getModularComponents($ageGroup, 'settings', 'adjectives'),
             'nouns' => $this->seedLoader->getModularComponents($ageGroup, 'settings', 'nouns')
         ];
-        $prompt['setting'] = $this->componentCombiner->generateRandomElements('setting', $settingComponents, $count);
+        $prompt['setting'] = $this->componentCombiner->generateRandomElements(
+            'setting',
+            $settingComponents,
+            $count
+        );
 
         // Generate events
         $eventComponents = [
@@ -105,14 +113,22 @@ class PromptGenerator
             'objects' => $this->seedLoader->getModularComponents($ageGroup, 'events', 'objects'),
             'modifiers' => $this->seedLoader->getModularComponents($ageGroup, 'events', 'modifiers')
         ];
-        $prompt['event'] = $this->componentCombiner->generateRandomElements('event', $eventComponents, $count);
+        $prompt['event'] = $this->componentCombiner->generateRandomElements(
+            'event',
+            $eventComponents,
+            $count
+        );
 
         // Generate objects
         $objectComponents = [
             'qualities' => $this->seedLoader->getModularComponents($ageGroup, 'objects', 'qualities'),
             'items' => $this->seedLoader->getModularComponents($ageGroup, 'objects', 'items')
         ];
-        $prompt['object'] = $this->componentCombiner->generateRandomElements('object', $objectComponents, $count);
+        $prompt['object'] = $this->componentCombiner->generateRandomElements(
+            'object',
+            $objectComponents,
+            $count
+        );
 
         return $prompt;
     }

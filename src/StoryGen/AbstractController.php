@@ -7,7 +7,6 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Log\LoggerInterface;
 
-
 /**
  * Class AbstractRoute
  * @package StoryGen
@@ -58,7 +57,7 @@ abstract class AbstractController
      * @param array $outArray
      * @return Response
      */
-    protected function outputResponse(Response $response, array $outArray) : Response
+    protected function outputResponse(Response $response, array $outArray): Response
     {
         $response->getBody()->write(json_encode($outArray, JSON_PRETTY_PRINT));
         return $response
@@ -97,12 +96,12 @@ abstract class AbstractController
     /**
      * Get query parameters from request
      *
-     * @param Request $request The request object
+     * @param ServerRequestInterface $request The request object
      * @param array $required Required parameters
      * @param array $optional Optional parameters with default values
      * @return array|Response Parameters or error response
      */
-    protected function getParams(Request $request, array $required = [], array $optional = [])
+    protected function getParams(ServerRequestInterface $request, array $required = [], array $optional = [])
     {
         $params = $request->getQueryParams();
         $result = [];

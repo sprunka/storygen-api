@@ -331,7 +331,9 @@ class SeedLoader
             $combined = [];
 
             // Add some events without modifiers
-            $combined = array_merge($combined, array_slice($withoutModifiers, 0,
+            $combined = array_merge($combined, array_slice(
+                $withoutModifiers,
+                0,
                 (int)(count($withoutModifiers) * 2 / 3)
             ));
             // Add some events with modifiers

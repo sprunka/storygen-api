@@ -4,7 +4,7 @@ namespace StoryGen\Services;
 
 /**
  * Service for combining modular components into complete elements
- * 
+ *
  * This service is responsible for combining modular components (adjectives, nouns, verbs, etc.)
  * into complete elements (characters, settings, events, objects) with validation to ensure
  * the combinations make sense.
@@ -119,7 +119,7 @@ class ComponentCombiner
         for ($i = 0; $i < $maxAttempts; $i++) {
             $adjective = $adjectives[array_rand($adjectives)];
             $noun = $nouns[array_rand($nouns)];
-            
+
             $character = $this->combineCharacter($adjective, $noun);
             if ($character !== null) {
                 return $character;
@@ -149,7 +149,7 @@ class ComponentCombiner
         for ($i = 0; $i < $maxAttempts; $i++) {
             $adjective = $adjectives[array_rand($adjectives)];
             $noun = $nouns[array_rand($nouns)];
-            
+
             $setting = $this->combineSetting($adjective, $noun);
             if ($setting !== null) {
                 return $setting;
@@ -187,12 +187,12 @@ class ComponentCombiner
             $verb = $verbs[array_rand($verbs)];
             $object = $objects[array_rand($objects)];
             $modifier = null;
-            
+
             // Randomly include a modifier based on the probability
             if (!empty($modifiers) && mt_rand() / mt_getrandmax() < $modifierProbability) {
                 $modifier = $modifiers[array_rand($modifiers)];
             }
-            
+
             $event = $this->combineEvent($verb, $object, $modifier);
             if ($event !== null) {
                 return $event;
@@ -222,7 +222,7 @@ class ComponentCombiner
         for ($i = 0; $i < $maxAttempts; $i++) {
             $quality = $qualities[array_rand($qualities)];
             $item = $items[array_rand($items)];
-            
+
             $object = $this->combineObject($quality, $item);
             if ($object !== null) {
                 return $object;
@@ -242,8 +242,12 @@ class ComponentCombiner
      * @param int $maxAttempts Maximum number of attempts to find a valid combination
      * @return array Array of random valid elements
      */
-    public function generateRandomElements(string $type, array $components, int $count = 1, int $maxAttempts = 10): array
-    {
+    public function generateRandomElements(
+        string $type,
+        array $components,
+        int $count = 1,
+        int $maxAttempts = 10
+    ): array {
         $elements = [];
 
         // Generate the specified number of elements

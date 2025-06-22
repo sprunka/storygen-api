@@ -4,7 +4,7 @@ namespace StoryGen\Services;
 
 /**
  * Validator for component combinations
- * 
+ *
  * This service validates combinations of components to ensure they are
  * grammatically correct and contextually appropriate.
  */
@@ -155,14 +155,18 @@ class ComponentValidator
     public function validateCharacter(string $adjective, string $noun): bool
     {
         // Check if the adjective is animate-only and the noun is not animate
-        if (in_array($adjective, $this->compatibilityRules['character']['animate_only']) &&
-            !in_array($noun, $this->compatibilityRules['character']['animate'])) {
+        if (
+            in_array($adjective, $this->compatibilityRules['character']['animate_only']) &&
+            !in_array($noun, $this->compatibilityRules['character']['animate'])
+        ) {
             return false;
         }
 
         // Check if the adjective is inanimate-only and the noun is animate
-        if (in_array($adjective, $this->compatibilityRules['character']['inanimate_only']) &&
-            in_array($noun, $this->compatibilityRules['character']['animate'])) {
+        if (
+            in_array($adjective, $this->compatibilityRules['character']['inanimate_only']) &&
+            in_array($noun, $this->compatibilityRules['character']['animate'])
+        ) {
             return false;
         }
 
@@ -179,14 +183,18 @@ class ComponentValidator
     public function validateSetting(string $adjective, string $noun): bool
     {
         // Check if the adjective is natural-only and the noun is not natural
-        if (in_array($adjective, $this->compatibilityRules['setting']['natural_only']) &&
-            !in_array($noun, $this->compatibilityRules['setting']['natural'])) {
+        if (
+            in_array($adjective, $this->compatibilityRules['setting']['natural_only']) &&
+            !in_array($noun, $this->compatibilityRules['setting']['natural'])
+        ) {
             return false;
         }
 
         // Check if the adjective is man-made-only and the noun is not man-made
-        if (in_array($adjective, $this->compatibilityRules['setting']['man_made_only']) &&
-            !in_array($noun, $this->compatibilityRules['setting']['man_made'])) {
+        if (
+            in_array($adjective, $this->compatibilityRules['setting']['man_made_only']) &&
+            !in_array($noun, $this->compatibilityRules['setting']['man_made'])
+        ) {
             return false;
         }
 
@@ -218,14 +226,18 @@ class ComponentValidator
     public function validateObject(string $quality, string $item): bool
     {
         // Check if the quality is animate-only and the item is not animate
-        if (in_array($quality, $this->compatibilityRules['object']['animate_only']) &&
-            !in_array($item, $this->compatibilityRules['object']['animate'])) {
+        if (
+            in_array($quality, $this->compatibilityRules['object']['animate_only']) &&
+            !in_array($item, $this->compatibilityRules['object']['animate'])
+        ) {
             return false;
         }
 
         // Check if the quality is inanimate-only and the item is animate
-        if (in_array($quality, $this->compatibilityRules['object']['inanimate_only']) &&
-            in_array($item, $this->compatibilityRules['object']['animate'])) {
+        if (
+            in_array($quality, $this->compatibilityRules['object']['inanimate_only']) &&
+            in_array($item, $this->compatibilityRules['object']['animate'])
+        ) {
             return false;
         }
 

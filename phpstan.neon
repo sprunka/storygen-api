@@ -1,0 +1,17 @@
+parameters:
+    level: 5
+    paths:
+        - src
+        - tests
+    excludePaths:
+        - vendor
+        - tmp
+    ignoreErrors:
+        -
+            identifier: missingType.iterableValue
+        - 
+            message: '#Call to an undefined method [a-zA-Z0-9\\_]+::(method|createMock)\(\)#'
+            path: tests/*
+        -
+            message: '#Property [a-zA-Z0-9\\_]+::\$validator is never read, only written#'
+            path: tests/*

@@ -207,15 +207,27 @@ class ComponentCombinerTest extends TestCase
 
         // Check that the result is a string and contains one of the verbs and one of the objects
         $this->assertIsString($result);
-        $this->assertMatchesRegularExpression('/^(finds|discovers|creates) (a treasure map|a secret door|a new friend)$/', $result);
+        $this->assertMatchesRegularExpression(
+            '/^(finds|discovers|creates) (a treasure map|a secret door|a new friend)$/',
+            $result
+        );
 
         // Test generating a random event with modifiers
         $modifiers = ['accidentally', 'suddenly', 'magically'];
-        $result = $this->combiner->generateRandomEvent($verbs, $objects, $modifiers, 1.0); // 100% chance of using a modifier
+        // 100% chance of using a modifier
+        $result = $this->combiner->generateRandomEvent(
+            $verbs,
+            $objects,
+            $modifiers,
+            1.0
+        );
 
         // Check that the result is a string and contains one of the verbs, one of the modifiers, and one of the objects
         $this->assertIsString($result);
-        $this->assertMatchesRegularExpression('/^(finds|discovers|creates) (accidentally|suddenly|magically) (a treasure map|a secret door|a new friend)$/', $result);
+        $this->assertMatchesRegularExpression(
+            '/^(finds|discovers|creates) (accidentally|suddenly|magically) (a treasure map|a secret door|a new friend)$/',
+            $result
+        );
     }
 
     /**
@@ -293,8 +305,14 @@ class ComponentCombinerTest extends TestCase
             $this->assertIsString($element);
             // The event might or might not have a modifier, so we need to check both patterns
             $this->assertTrue(
-                preg_match('/^(finds|discovers|creates) (a treasure map|a secret door|a new friend)$/', $element) === 1 ||
-                preg_match('/^(finds|discovers|creates) (accidentally|suddenly|magically) (a treasure map|a secret door|a new friend)$/', $element) === 1
+                preg_match(
+                    '/^(finds|discovers|creates) (a treasure map|a secret door|a new friend)$/',
+                    $element
+                ) === 1 ||
+                preg_match(
+                    '/^(finds|discovers|creates) (accidentally|suddenly|magically) (a treasure map|a secret door|a new friend)$/',
+                    $element
+                ) === 1
             );
         }
 

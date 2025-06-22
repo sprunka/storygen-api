@@ -8,7 +8,7 @@ use Psr\Http\Message\ServerRequestInterface;
 use Psr\Log\LoggerInterface;
 
 /**
- * Class AbstractRoute
+ * Class AbstractController
  * @package StoryGen
  */
 abstract class AbstractController
@@ -33,7 +33,9 @@ abstract class AbstractController
     }
 
     /**
-     * @return object
+     * Get help information for this controller
+     * 
+     * @return object Help information as an object
      */
     public function getHelp()
     {

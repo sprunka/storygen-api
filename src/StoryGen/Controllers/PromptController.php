@@ -176,10 +176,12 @@ class PromptController extends AbstractController
     }
 
     /**
-     * @param Request $request
-     * @param Response $response
-     * @param array $args
-     * @return Response
+     * Default invoke method that generates a complete story prompt
+     * 
+     * @param Request $request The request object
+     * @param Response $response The response object
+     * @param array $args Route arguments
+     * @return Response The response with generated prompt
      */
     public function __invoke(Request $request, Response $response, array $args = []): Response
     {

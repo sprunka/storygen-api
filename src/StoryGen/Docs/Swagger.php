@@ -27,8 +27,10 @@ class Swagger extends AbstractController
             $openapi = \OpenApi\scan([
                 // Include the config/routes.php file for endpoint annotations
                 __DIR__ . '/../../../config/routes.php',
-                // Include only the StoryGen directory for annotations
+                // Include the StoryGen directory for annotations
                 __DIR__ . '/../',
+                // Include the Controllers directory for App namespace annotations
+                __DIR__ . '/../../../src/Controllers',
             ], [
                 'version' => '3.0.0', // Explicitly set the OpenAPI version
             ]);

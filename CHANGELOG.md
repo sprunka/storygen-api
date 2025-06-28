@@ -37,6 +37,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Security
 
+## [0.0.2] - 2025-06-28
+
+### Added
+- Added OpenAPI documentation for all endpoints
+- Added proper validation for age groups, categories, and component types
+- Created buglist.md documenting known issues with word combinations
+
+### Fixed
+- Fixed age group validation to use correct values (kids, teens, adults)
+- Added validation for component type and category combinations
+
 ## [0.0.1] - 2023-10-01
 
 ### Added

@@ -21,6 +21,31 @@ class PromptController extends AbstractController
     private PromptGenerator $promptGenerator;
 
     /**
+     * Valid age groups for content filtering
+     */
+    private const VALID_AGE_GROUPS = ['kids', 'teens', 'adults'];
+
+    /**
+     * Valid categories for components
+     */
+    private const VALID_CATEGORIES = ['characters', 'settings', 'events', 'objects'];
+
+    /**
+     * Valid component types
+     */
+    private const VALID_COMPONENT_TYPES = ['adjectives', 'nouns', 'verbs', 'objects', 'modifiers', 'qualities', 'items'];
+
+    /**
+     * Valid component types per category
+     */
+    private const CATEGORY_COMPONENT_TYPES = [
+        'characters' => ['adjectives', 'nouns'],
+        'settings' => ['adjectives', 'nouns'],
+        'events' => ['verbs', 'objects', 'modifiers'],
+        'objects' => ['qualities', 'items']
+    ];
+
+    /**
      * Constructor
      *
      * @param PromptGenerator $promptGenerator
@@ -44,6 +69,15 @@ class PromptController extends AbstractController
         $params = $request->getQueryParams();
         $ageGroup = $params['age_group'] ?? null;
         $count = isset($params['count']) ? (int) $params['count'] : null;
+
+        // Validate age group if provided
+        if ($ageGroup !== null && !in_array($ageGroup, self::VALID_AGE_GROUPS)) {
+            return $this->respondWithError(
+                $response,
+                'Invalid age_group. Must be one of: ' . implode(', ', self::VALID_AGE_GROUPS),
+                400
+            );
+        }
 
         // Validate count parameter if provided
         if ($count !== null && ($count < 1 || $count > 10)) {
@@ -133,13 +167,51 @@ class PromptController extends AbstractController
         $category = $params['category'] ?? null;
         $componentType = $params['component_type'] ?? null;
 
+        // Validate age group if provided
+        if ($ageGroup !== null && !in_array($ageGroup, self::VALID_AGE_GROUPS)) {
+            return $this->respondWithError(
+                $response,
+                'Invalid age_group. Must be one of: ' . implode(', ', self::VALID_AGE_GROUPS),
+                400
+            );
+        }
+
         // Validate required parameters
         if (!$category) {
             return $this->respondWithError($response, 'Category parameter is required', 400);
         }
 
+        if (!in_array($category, self::VALID_CATEGORIES)) {
+            return $this->respondWithError(
+                $response,
+                'Invalid category. Must be one of: ' . implode(', ', self::VALID_CATEGORIES),
+                400
+            );
+        }
+
         if (!$componentType) {
             return $this->respondWithError($response, 'Component type parameter is required', 400);
+        }
+
+        if (!in_array($componentType, self::VALID_COMPONENT_TYPES)) {
+            return $this->respondWithError(
+                $response,
+                'Invalid component_type. Must be one of: ' . implode(', ', self::VALID_COMPONENT_TYPES),
+                400
+            );
+        }
+
+        // Validate that the component type is valid for the given category
+        if (!in_array($componentType, self::CATEGORY_COMPONENT_TYPES[$category])) {
+            return $this->respondWithError(
+                $response,
+                sprintf(
+                    'Invalid component_type for category "%s". Must be one of: %s',
+                    $category,
+                    implode(', ', self::CATEGORY_COMPONENT_TYPES[$category])
+                ),
+                400
+            );
         }
 
         try {

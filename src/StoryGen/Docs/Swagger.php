@@ -23,25 +23,40 @@ class Swagger extends AbstractController
     public function __invoke(Request $request, Response $response, array $args = []): Response
     {
         try {
+            $baseDir = __DIR__ . '/../../..';
+
+            if (!is_dir($baseDir . '/config') || !is_dir($baseDir . '/src/StoryGen')) {
+                throw new \RuntimeException('Required directories not found');
+            }
+
             // Configure the OpenAPI generator with explicit settings
             $openapi = \OpenApi\scan([
-                // Include the config/routes.php file for endpoint annotations
-                __DIR__ . '/../../../config/routes.php',
-                // Include the StoryGen directory for annotations
-                __DIR__ . '/../',
-                // Include the Controllers directory for App namespace annotations
-                __DIR__ . '/../../../src/Controllers',
+                $baseDir . '/config',              // For routes.php and other config files
+                $baseDir . '/src/StoryGen',        // For all StoryGen classes
             ], [
-                'version' => '3.0.0', // Explicitly set the OpenAPI version
+                'version' => '3.0.0',
             ]);
 
-            // Return the OpenAPI specification as JSON
-            return $this->respondWithJson($response, $openapi);
+            if (!$openapi) {
+                throw new \RuntimeException('Failed to generate OpenAPI documentation');
+            }
+
+            $json = $openapi->toJson();
+            if (!$json) {
+                throw new \RuntimeException('Failed to serialize OpenAPI documentation to JSON');
+            }
+
+            $response = $response->withHeader('Content-Type', 'application/json');
+            $response->getBody()->write($json);
+            return $response;
         } catch (\Exception $e) {
             if ($this->logger) {
-                $this->logger->error('Error generating OpenAPI documentation: ' . $e->getMessage());
+                $this->logger->error('Error generating OpenAPI documentation: ' . $e->getMessage(), [
+                    'exception' => get_class($e),
+                    'trace' => $e->getTraceAsString()
+                ]);
             }
-            return $this->respondWithError($response, 'Error generating OpenAPI documentation', 500);
+            return $this->respondWithError($response, 'Error generating OpenAPI documentation: ' . $e->getMessage(), 500);
         }
     }
 }

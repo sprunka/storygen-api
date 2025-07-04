@@ -6,8 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2025-07-04
+
+### Changed
+- Updated `modular_seeds.json` with more data.
+
 ## [0.1.0] - 2025-07-03
 
+### Added
 - Added new outgunned plots feature with genre-based content
 - Added new endpoint `/api/outgunned` that supports:
     - Genre filtering (action, adventure, spy_thriller, blockbuster)

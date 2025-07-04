@@ -2,7 +2,7 @@
   "name": "sprunka/story-prompt-generator",
   "description": "A RESTful PHP API service that delivers randomized story prompts by combining elements—characters, settings, events, objects—based on a flexible JSON schema.",
   "license": "MIT",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "authors": [
     {
       "name": "Sean Prunka",

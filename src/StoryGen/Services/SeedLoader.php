@@ -2,6 +2,8 @@
 
 namespace StoryGen\Services;
 
+use OpenApi\Annotations as OA;
+
 /**
  * @OA\Schema(
  *     schema="PromptElements",
@@ -115,6 +117,33 @@ class SeedLoader
         }
 
         $this->modularSeedData = $data;
+        return $data;
+    }
+
+    /**
+     * Load outgunned plots data from JSON file
+     *
+     * @return array The outgunned plots data
+     * @throws \RuntimeException If the file cannot be read or parsed
+     */
+    public function loadOutgunnedPlots(): array
+    {
+        $filePath = dirname($this->seedPath) . '/outgunned_plots.json';
+
+        if (!file_exists($filePath)) {
+            throw new \RuntimeException('Outgunned plots data file not found');
+        }
+
+        $jsonData = file_get_contents($filePath);
+        if ($jsonData === false) {
+            throw new \RuntimeException('Failed to read outgunned plots data file');
+        }
+
+        $data = json_decode($jsonData, true);
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            throw new \RuntimeException('Failed to parse outgunned plots data: ' . json_last_error_msg());
+        }
+
         return $data;
     }
 

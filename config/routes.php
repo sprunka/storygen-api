@@ -198,6 +198,39 @@ return function (App $app) {
 
         /**
          * @OA\Get(
+         *     path="/api/outgunned",
+         *     summary="Get a random outgunned plot",
+         *     description="Returns a randomly generated plot from the outgunned plots collection filtered by genre",
+         *     @OA\Parameter(
+         *         name="genre",
+         *         in="query",
+         *         description="Genre of the plot (defaults to 'all' which uses content from all genres)",
+         *         required=false,
+         *         @OA\Schema(
+         *             type="string",
+         *             enum={"all", "any", "action", "adventure", "spy_thriller", "blockbuster"},
+         *             default="all"
+         *         )
+         *     ),
+         *     @OA\Response(
+         *         response="200",
+         *         description="Successfully generated plot",
+         *         @OA\JsonContent(type="object")
+         *     ),
+         *     @OA\Response(
+         *         response="400",
+         *         description="Invalid genre parameter",
+         *         @OA\JsonContent(
+         *             type="object",
+         *             @OA\Property(property="error", type="string")
+         *         )
+         *     )
+         * )
+         */
+        $group->get('/outgunned', PromptController::class . ':getOutgunnedPlot');
+
+        /**
+         * @OA\Get(
          *     path="/api/components",
          *     summary="Get available story components",
          *     description="Returns a list of story components filtered by the specified parameters",

@@ -2,6 +2,8 @@
 
 namespace StoryGen\Services;
 
+use OpenApi\Annotations as OA;
+
 /**
  * @OA\Schema(
  *     schema="Prompt",
@@ -47,7 +49,7 @@ class PromptGenerator
     {
         // If count is null, randomize between 1 and 3
         if ($count === null) {
-            $count = rand(1, 3);
+            $count = random_int(1, 3);
         }
 
         // If using component combiner, generate prompt using modular components
@@ -78,12 +80,7 @@ class PromptGenerator
      */
     private function generateModularPrompt(?string $ageGroup = null, int $count = 1): array
     {
-        $prompt = [
-            'character' => [],
-            'setting' => [],
-            'event' => [],
-            'object' => []
-        ];
+        $prompt = [];
 
         // Generate characters
         $characterComponents = [
@@ -333,5 +330,135 @@ class PromptGenerator
         ];
 
         return $map[$type] ?? $type . 's';
+    }
+
+    /**
+     * Generate a random plot from the outgunned plots collection
+     *
+     * @param string $genre The genre to filter by (any, all, action, adventure, spy_thriller, blockbuster)
+     * @return array The generated plot components
+     * @throws \Exception If plot generation fails
+     */
+    public function generateOutgunnedPlot(string $genre): array
+    {
+        $plots = $this->seedLoader->loadOutgunnedPlots();
+
+        // If genre is 'any', randomly select from available genres
+        if ($genre === 'any') {
+            $availableGenres = array_keys($plots);
+            if (empty($availableGenres)) {
+                throw new \RuntimeException('No genres available in outgunned plots data');
+            }
+            $randomIndex = array_rand($availableGenres);
+            $genre = $availableGenres[$randomIndex];
+        }
+
+        // If genre is 'all', merge content from all genres
+        if ($genre === 'all') {
+            $mergedContent = [
+                'characters' => ['adjectives' => [], 'nouns' => []],
+                'settings' => ['adjectives' => [], 'nouns' => []],
+                'events' => ['verbs' => [], 'objects' => [], 'modifiers' => []],
+                'objects' => ['qualities' => [], 'items' => []]
+            ];
+
+            // Merge all content from each genre
+            foreach ($plots as $genreData) {
+                foreach (['characters', 'settings'] as $category) {
+                    $mergedContent[$category]['adjectives'] = array_merge(
+                        $mergedContent[$category]['adjectives'],
+                        $genreData[$category]['adjectives'] ?? []
+                    );
+                    $mergedContent[$category]['nouns'] = array_merge(
+                        $mergedContent[$category]['nouns'],
+                        $genreData[$category]['nouns'] ?? []
+                    );
+                }
+
+                foreach (['verbs', 'objects', 'modifiers'] as $type) {
+                    $mergedContent['events'][$type] = array_merge(
+                        $mergedContent['events'][$type],
+                        $genreData['events'][$type] ?? []
+                    );
+                }
+
+                $mergedContent['objects']['qualities'] = array_merge(
+                    $mergedContent['objects']['qualities'],
+                    $genreData['objects']['qualities'] ?? []
+                );
+                $mergedContent['objects']['items'] = array_merge(
+                    $mergedContent['objects']['items'],
+                    $genreData['objects']['items'] ?? []
+                );
+            }
+
+            // Remove duplicates from merged content
+            foreach (['characters', 'settings'] as $category) {
+                $mergedContent[$category]['adjectives'] = array_unique($mergedContent[$category]['adjectives']);
+                $mergedContent[$category]['nouns'] = array_unique($mergedContent[$category]['nouns']);
+            }
+            foreach (['verbs', 'objects', 'modifiers'] as $type) {
+                $mergedContent['events'][$type] = array_unique($mergedContent['events'][$type]);
+            }
+            $mergedContent['objects']['qualities'] = array_unique($mergedContent['objects']['qualities']);
+            $mergedContent['objects']['items'] = array_unique($mergedContent['objects']['items']);
+
+            $genreData = $mergedContent;
+        } else {
+            if (!isset($plots[$genre])) {
+                throw new \InvalidArgumentException("Invalid genre: $genre");
+            }
+            $genreData = $plots[$genre];
+        }
+
+        // Get random elements from each category
+        $character = $this->combineRandomElements(
+            $genreData['characters']['adjectives'],
+            $genreData['characters']['nouns']
+        );
+        $setting = $this->combineRandomElements(
+            $genreData['settings']['adjectives'],
+            $genreData['settings']['nouns']
+        );
+        $event = $this->generateEventPhrase($genreData['events']);
+        $object = $this->combineRandomElements(
+            $genreData['objects']['qualities'],
+            $genreData['objects']['items']
+        );
+
+        return [
+            'character' => $character,
+            'setting' => $setting,
+            'event' => $event,
+            'object' => $object
+        ];
+    }
+
+    /**
+     * Helper method to combine random elements from two arrays
+     *
+     * @param array $first First array of elements
+     * @param array $second Second array of elements
+     * @return string Combined random elements
+     */
+    private function combineRandomElements(array $first, array $second): string
+    {
+        $firstElement = $first[array_rand($first)];
+        $secondElement = $second[array_rand($second)];
+        return "$firstElement $secondElement";
+    }
+
+    /**
+     * Helper method to generate an event phrase
+     *
+     * @param array $eventData Event data containing verbs, objects, and modifiers
+     * @return string Generated event phrase
+     */
+    private function generateEventPhrase(array $eventData): string
+    {
+        $verb = $eventData['verbs'][array_rand($eventData['verbs'])];
+        $object = $eventData['objects'][array_rand($eventData['objects'])];
+        $modifier = $eventData['modifiers'][array_rand($eventData['modifiers'])];
+        return "$verb $object $modifier";
     }
 }

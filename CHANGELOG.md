@@ -1,21 +1,20 @@
 # Changelog
-
-All notable changes to the Story Prompts API will be documented in this file.
+All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.0] - 2025-06-22
+## [Unreleased]
 
-### Added
-- Initial API implementation with endpoints for generating story prompts
-- Support for age group filtering (kids, teens, adults)
-- OpenAPI documentation at `/openapi.json`
-- Unit and integration tests
-- Code linter for PSR-12 compliance with PHP_CodeSniffer
-- Static analysis tool (PHPStan) for code quality
-- Performance benchmarking script for API endpoints
-- Response compression middleware for improved performance
+## [0.1.0] - 2025-07-03
+
+- Added new outgunned plots feature with genre-based content
+- Added new endpoint `/api/outgunned` that supports:
+    - Genre filtering (action, adventure, spy_thriller, blockbuster)
+    - "all" mode that combines content from all genres (default)
+    - "any" mode that randomly selects one genre
+- Added outgunned_plots.json data file with genre-specific content
+- Added comprehensive OpenAPI documentation for the new endpoint
 
 ### Changed
 - Restructured project to follow a more organized architecture:
@@ -27,15 +26,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Downgraded Swagger-PHP from v5.1.3 to v3.3 for better compatibility
 - Updated tests to use new namespace and structure
 
-### Deprecated
-
-### Removed
-
 ### Fixed
 - Fixed an issue with the compression middleware that caused the OpenAPI documentation endpoint (`/openapi.json`) to return a "net::ERR_CONTENT_DECODING_FAILED" error in browsers
 - Updated PHPStan configuration to replace deprecated `checkMissingIterableValueType` option with the recommended `ignoreErrors` approach and increased memory limit to prevent crashes during analysis
-
-### Security
 
 ## [0.0.2] - 2025-06-28
 
@@ -44,9 +37,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added proper validation for age groups, categories, and component types
 - Created buglist.md documenting known issues with word combinations
 
+### Changed
+- Restructured project to follow a more organized architecture:
+    - Changed namespace from `App` to `StoryGen`
+    - Reorganized directory structure with dedicated config directory
+    - Separated configuration into dedicated files
+    - Created AbstractController base class
+    - Moved Swagger documentation to dedicated Docs directory
+- Downgraded Swagger-PHP from v5.1.3 to v3.3 for better compatibility
+- Updated tests to use new namespace and structure
+
 ### Fixed
 - Fixed age group validation to use correct values (kids, teens, adults)
 - Added validation for component type and category combinations
+
+## [pre-release 1.0.0] - Abandoned and incorporated into 0.0.2
+
+### Added
+- Initial API implementation with endpoints for generating story prompts
+- Support for age group filtering (kids, teens, adults)
+- OpenAPI documentation at `/openapi.json`
+- Unit and integration tests
+- Code linter for PSR-12 compliance with PHP_CodeSniffer
+- Static analysis tool (PHPStan) for code quality
+- Performance benchmarking script for API endpoints
+- Response compression middleware for improved performance
 
 ## [0.0.1] - 2023-10-01
 
@@ -55,5 +70,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Basic API structure
 - Seed data for story prompts
 
-[Unreleased]: https://github.com/sprunka/story-prompt-generator/compare/v0.0.1...HEAD
+[Unreleased]: https://github.com/sprunka/story-prompt-generator/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/sprunka/story-prompt-generator/compare/v0.0.2...v0.1.0
+[0.0.2]: https://github.com/sprunka/story-prompt-generator/compare/v0.0.1...v0.0.2
 [0.0.1]: https://github.com/sprunka/story-prompt-generator/releases/tag/v0.0.1

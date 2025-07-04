@@ -22,6 +22,12 @@ TODO: Fix problematic word combinations in the seed data that can create nonsens
 #### Events Issues
 - Some objects in events are actually actions (e.g., "into something magical", "without wings")
 - Some objects create grammatically incorrect combinations with verbs
+- Incorrect adverb placement (e.g., "stops quickly a comet", "clones quietly a special power")
+- Unnatural sentence structures that follow non-English word order
+- Redundant or conflicting modifiers (e.g., "fights completely a dream willingly")
+- Missing prepositions and conjunctions where needed
+- Direct objects placed after adverbs instead of after verbs
+- Inconsistent tense usage within events
 
 ## Suggested Fixes
 1. Review all adjectives to ensure they are single words or proper hyphenated compounds

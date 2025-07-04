@@ -1,0 +1,294 @@
+{
+  "action": {
+    "characters": {
+      "adjectives": [
+        "rogue", "ex-special forces", "hardened", "cyber-enhanced", "former black ops",
+        "disgraced", "retired", "vengeful", "unlikely", "reluctant",
+        "elite", "wanted", "amnesiac", "burned", "battle-scarred",
+        "mercenary", "undercover", "fugitive", "augmented", "legendary",
+        "one-man army", "tactical", "infamous", "unhinged", "lethal"
+      ],
+      "nouns": [
+        "operative", "soldier", "assassin", "thief", "hacker",
+        "agent", "martial artist", "sniper", "pilot", "vigilante",
+        "bodyguard", "smuggler", "bounty hunter", "demolition expert", "spy",
+        "mercenary", "drone operator", "race car driver", "survivalist", "treasure hunter",
+        "stuntman", "investigator", "criminal", "revolutionary", "scientist"
+      ]
+    },
+    "settings": {
+      "adjectives": [
+        "war-torn", "high-security", "underground", "floating", "bombed-out",
+        "besieged", "collapsing", "hostile", "tropical", "frozen",
+        "cyberpunk", "post-apocalyptic", "militarized", "off-grid", "volcanic",
+        "quarantined", "monsoon-soaked", "airborne", "submerged", "booby-trapped",
+        "alien-infested", "nuclear", "vertical", "moving", "unstable"
+      ],
+      "nouns": [
+        "prison", "city", "facility", "island", "aircraft carrier",
+        "jungle", "desert", "skyscraper", "subway", "casino",
+        "oil rig", "space station", "bunker", "train", "mountain base",
+        "dome", "shipyard", "ambulance", "highway", "dam",
+        "museum", "hotel", "mine", "temple", "airport"
+      ]
+    },
+    "events": {
+      "verbs": [
+        "assaults", "infiltrates", "rigs", "outruns", "intercepts",
+        "sabotages", "hijacks", "decrypts", "evades", "unleashes",
+        "storms", "neutralizes", "smuggles", "detonates", "extracts",
+        "duels", "jumps", "crashes", "hacks", "ambushes",
+        "liberates", "interrogates", "steals", "rescues", "betrays"
+      ],
+      "objects": [
+        "a doomsday device", "an experimental weapon", "a biometric virus", "a nuclear football", "a rogue AI",
+        "a data drive", "a prototype vehicle", "a prisoner of war", "a stolen artifact", "a black box",
+        "a briefcase of cash", "a biological sample", "a master keycard", "a satellite controller", "a witness",
+        "a hacker chip", "a detonator", "a manifest", "a tracking device", "a memory implant",
+        "a combat drone", "a formula", "a targeting system", "a kill list", "a time-sensitive payload"
+      ],
+      "modifiers": [
+        "mid-air", "with seconds to spare", "against all odds", "while bleeding out", "during lockdown",
+        "under heavy fire", "with improvised weapons", "while handcuffed", "during an eclipse", "with backup offline",
+        "amidst chaos", "while compromised", "during evacuation", "with a ticking clock", "as walls close in",
+        "with no exit", "while drugged", "during a solar flare", "with systems failing", "as allies turn",
+        "while hunted", "during a riot", "with false intel", "as traps activate", "with the world watching"
+      ]
+    },
+    "objects": {
+      "qualities": [
+        "experimental", "stolen", "classified", "radioactive", "high-frequency",
+        "military-grade", "suppressed", "tactical", "armor-piercing", "remote-controlled",
+        "voice-activated", "unstable", "dual-purpose", "concealed", "self-destructing",
+        "biometric", "nano-enhanced", "illegal", "homing", "rapid-fire",
+        "explosive", "EMP-shielded", "synthetic", "holographic", "counterfeit"
+      ],
+      "items": [
+        "handgun", "knife", "grenade", "rifle", "drone",
+        "exosuit", "cybereye", "grappling hook", "taser", "bulletproof vest",
+        "night vision", "lockpick", "stimulant", "tracker", "cipher",
+        "jetpack", "cloaking device", "defibrillator", "data pad", "parachute",
+        "sonic emitter", "wrist computer", "smoke bomb", "magnetic boots", "syringe"
+      ]
+    }
+  },
+  "adventure": {
+    "characters": {
+      "adjectives": [
+        "globetrotting", "discredited", "obsessive", "quick-witted", "treasure-hunting",
+        "unconventional", "reckless", "resourceful", "self-taught", "dogged",
+        "charming", "opportunistic", "cryptic", "eccentric", "legend-seeking",
+        "stubborn", "polyglot", "acrobatic", "aristocratic", "paranormal",
+        "disgraced", "cartographer", "shipwrecked", "escapologist", "code-breaking"
+      ],
+      "nouns": [
+        "archaeologist", "explorer", "journalist", "thief", "pilot",
+        "historian", "mountaineer", "diver", "anthropologist", "collector",
+        "professor", "smuggler", "photographer", "survivor", "linguist",
+        "tour guide", "aviator", "freedom fighter", "herpetologist", "fortuneteller",
+        "ship captain", "tomb raider", "diplomat", "mercenary", "con artist"
+      ]
+    },
+    "settings": {
+      "adjectives": [
+        "uncharted", "forgotten", "sunken", "cursed", "magnetic",
+        "shifting", "volcanic", "subterranean", "monsoon", "frozen",
+        "quicksand", "booby-trapped", "vertical", "collapsing", "time-warped",
+        "sacrificial", "hallucinogenic", "tidal", "radioactive", "gravity-defying",
+        "holy", "alien", "petrified", "living", "dimensional"
+      ],
+      "nouns": [
+        "temple", "ruins", "city", "cave system", "pyramid",
+        "jungle", "volcano", "shipwreck", "monastery", "oasis",
+        "canyon", "glacier", "underground river", "lost colony", "labyrinth",
+        "sunken ship", "valley", "plateau", "crypt", "archipelago",
+        "observatory", "library", "mine", "waterfall", "geyser"
+      ]
+    },
+    "events": {
+      "verbs": [
+        "deciphers", "races to", "uncovers", "navigates", "outsmarts",
+        "reconstructs", "solves", "preserves", "escapes", "follows",
+        "translates", "duplicates", "awakens", "reaches", "disarms",
+        "photographs", "records", "confronts", "retrieves", "reveals",
+        "bargains with", "interprets", "climbs", "dives", "excavates"
+      ],
+      "objects": [
+        "an ancient mechanism", "a sacred text", "a celestial map", "a legendary weapon", "a lost language",
+        "a cursed relic", "a living fossil", "a precursor artifact", "a royal seal", "a navigational puzzle",
+        "a biological wonder", "a cultural treasure", "an elemental stone", "a prophetic painting", "a forbidden knowledge",
+        "a mythical creature", "an architect's secret", "a sacrificial altar", "an astronomical device", "a genetic anomaly",
+        "a timekeeping device", "an alchemical formula", "a sonic resonator", "a luminescent organism", "a dimensional gateway"
+      ],
+      "modifiers": [
+        "before rivals arrive", "as walls collapse", "while poisoned", "during a celestial event", "with incomplete maps",
+        "amidst native hostility", "while being hunted", "during equipment failure", "with a traitor among them", "as legends foretold",
+        "against academic consensus", "while timelines converge", "during a spiritual trial", "with unexpected allies", "as nature rebels",
+        "while memories fade", "during a linguistic breakthrough", "with physical transformations", "as guardians awaken", "while reality distorts",
+        "during a sacred ceremony", "with ancient warnings", "as traps reset", "while historical records burn", "with competing expeditions"
+      ]
+    },
+    "objects": {
+      "qualities": [
+        "ancient", "cryptic", "ceremonial", "cartographic", "luminous",
+        "resonating", "magnetic", "hieroglyphic", "sacrificial", "oracular",
+        "petrified", "astronomical", "alchemical", "dimensional", "forbidden",
+        "living", "cursed", "divine", "elemental", "mythic",
+        "architectural", "prophetic", "biological", "linguistic", "temporal"
+      ],
+      "items": [
+        "compass", "journal", "scarab", "telescope", "crystal",
+        "mask", "urn", "astrolabe", "codex", "key",
+        "bell", "mirror", "chime", "scalpel", "lens",
+        "hourglass", "locket", "statue", "brush", "specimen",
+        "seal", "lamp", "wheel", "pipe", "needle"
+      ]
+    }
+  },
+  "spy_thriller": {
+    "characters": {
+      "adjectives": [
+        "deep cover", "compromised", "mole-hunting", "burned", "interrogation-resistant",
+        "doubled", "sleeper", "rogue", "infiltration", "counterintelligence",
+        "disavowed", "cyber", "honeypot", "psychopathic", "ghost",
+        "military intelligence", "interrogator", "surveillance", "mole", "dead-drop",
+        "legend", "cipher", "blackmail", "exfiltration", "wetwork"
+      ],
+      "nouns": [
+        "agent", "operative", "handler", "analyst", "hacker",
+        "interrogator", "assassin", "diplomat", "journalist", "saboteur",
+        "double agent", "sleeper cell", "security chief", "cryptographer", "courier",
+        "politician", "scientist", "industrialist", "revolutionary", "emigre",
+        "bodyguard", "oligarch", "hijacker", "hacker", "forger"
+      ]
+    },
+    "settings": {
+      "adjectives": [
+        "compromised", "bugged", "high-security", "neutral", "embattled",
+        "listening", "interrogation", "extraction", "border", "surveillance",
+        "black site", "underground", "diplomatic", "corporate", "military",
+        "covert", "infiltration", "exfiltration", "dead-drop", "cyber",
+        "mole", "safehouse", "intercepted", "backchannel", "classified"
+      ],
+      "nouns": [
+        "embassy", "hotel", "airport", "train", "prison",
+        "headquarters", "bank", "villa", "suburb", "restaurant",
+        "bathhouse", "museum", "hospital", "university", "nightclub",
+        "casino", "ship", "gala", "parliament", "newspaper",
+        "bunker", "penthouse", "catacombs", "data center", "observatory"
+      ]
+    },
+    "events": {
+      "verbs": [
+        "intercepts", "decrypts", "bugs", "extracts", "interrogates",
+        "eliminates", "infiltrates", "exposes", "discredits", "frames",
+        "blackmails", "recruits", "defects", "switches", "plants",
+        "steals", "fakes", "leaks", "hacks", "provokes",
+        "misleads", "sabotages", "betrays", "replaces", "vanishes"
+      ],
+      "objects": [
+        "a kill list", "a biometric scan", "a retinal pattern", "a voiceprint", "a DNA sample",
+        "a microdot", "a one-time pad", "a cipher wheel", "a dead drop", "a brush pass",
+        "a sleeper code", "a termination order", "a burn notice", "a legend file", "a cover story",
+        "a false flag", "a honey trap", "a crisis actor", "a cutout", "a ghost account",
+        "a red herring", "a Manchurian trigger", "a dead man's switch", "a cryptographic key", "a neural implant"
+      ],
+      "modifiers": [
+        "during extraction", "while under surveillance", "with compromised identity", "during asset denial", "with plausible deniability",
+        "amidst mole hunt", "while doubled", "during communications blackout", "with sleeper activation", "as cover burns",
+        "during false flag operation", "while being tailed", "with handler down", "during dead drop", "with biometric spoofing",
+        "amidst interrogation", "while memory wiped", "during cyber intrusion", "with voice mimicry", "as protocol collapses",
+        "during dead man's switch", "while facial recognition tracks", "with retinal projection", "during honey trap", "as legend unravels"
+      ]
+    },
+    "objects": {
+      "qualities": [
+        "concealed", "covert", "tactical", "subdermal", "biometric",
+        "encrypted", "disposable", "undetectable", "miniature", "explosive",
+        "neurotoxic", "radioactive", "hallucinogenic", "amnesic", "paralytic",
+        "corrosive", "incendiary", "EMP", "sonic", "viral",
+        "mimetic", "reflective", "adaptive", "smart", "nano"
+      ],
+      "items": [
+        "pen", "watch", "glasses", "cufflinks", "tie",
+        "ring", "cigarette", "lipstick", "coin", "keycard",
+        "USB", "syringe", "razor", "belt", "shoe",
+        "camera", "microphone", "recorder", "transmitter", "scanner",
+        "lockpick", "garrote", "needle", "mirror", "stamp"
+      ]
+    }
+  },
+  "blockbuster": {
+    "characters": {
+      "adjectives": [
+        "washed-up", "one-armed", "cyborg", "disgraced", "prophesied",
+        "last", "experimental", "mutated", "hybrid", "resurrected",
+        "cloned", "augmented", "psychic", "immortal", "amnesiac",
+        "possessed", "chosen", "renegade", "legendary", "unstoppable",
+        "time-displaced", "artificial", "superpowered", "cursed", "reconstructed"
+      ],
+      "nouns": [
+        "cop", "soldier", "scientist", "detective", "thief",
+        "hacker", "archaeologist", "pilot", "mercenary", "agent",
+        "champion", "survivor", "experiment", "warrior", "outcast",
+        "genius", "heir", "prototype", "vigilante", "hybrid",
+        "prophet", "ghost", "machine", "mutant", "avenger"
+      ]
+    },
+    "settings": {
+      "adjectives": [
+        "floating", "collapsing", "exploding", "overrun", "sentient",
+        "dimensional", "mechanical", "holographic", "shifting", "unstable",
+        "ancient", "alien", "cursed", "digital", "radioactive",
+        "mutating", "self-repairing", "booby-trapped", "time-locked", "hallucinogenic",
+        "living", "breathing", "evolving", "gravity-defying", "neural"
+      ],
+      "nouns": [
+        "city", "island", "ship", "facility", "temple",
+        "arena", "dimension", "network", "colony", "machine",
+        "monument", "bunker", "highway", "train", "pyramid",
+        "volcano", "ocean", "desert", "jungle", "moon",
+        "dream", "simulation", "afterlife", "void", "nexus"
+      ]
+    },
+    "events": {
+      "verbs": [
+        "activates", "unleashes", "awakens", "merges with", "battles",
+        "sacrifices", "reboots", "downloads", "hijacks", "evolves",
+        "possesses", "rewrites", "teleports", "duplicates", "overrides",
+        "resurrects", "mutates", "transforms", "jumps", "erases",
+        "reconstructs", "infects", "synchronizes", "disintegrates", "reverses"
+      ],
+      "objects": [
+        "a doomsday weapon", "an ancient AI", "a genetic code", "a time paradox", "a black hole generator",
+        "a planetary shield", "a neural virus", "a soul transfer", "a reality bomb", "a cosmic entity",
+        "a zombie plague", "a god complex", "a singularity core", "a prophecy", "a multiverse bridge",
+        "a memory archive", "a quantum computer", "a alien symbiote", "a demonic pact", "a universal translator",
+        "a terraforming device", "a dream extractor", "a clone army", "a emotion amplifier", "a DNA bomb"
+      ],
+      "modifiers": [
+        "during countdown", "as world watches", "with last hope", "against all odds", "while bleeding out",
+        "amidst evacuation", "with seconds remaining", "during solar flare", "with backup offline", "as systems fail",
+        "while memories fade", "during eclipse", "with allies falling", "as time distorts", "while powers fluctuate",
+        "amidst betrayal", "during EMP burst", "with voice failing", "as body transforms", "while reality glitches",
+        "during final transmission", "with no escape", "as truth reveals", "while doppelgangers appear", "with fate undecided"
+      ]
+    },
+    "objects": {
+      "qualities": [
+        "glowing", "humming", "sentient", "unstable", "dimensional",
+        "cursed", "holographic", "self-repairing", "bio-mechanical", "psychic",
+        "time-shifted", "alloyed", "programmable", "adaptive", "neural",
+        "quantum", "primal", "celestial", "demonic", "angelic",
+        "mutating", "reality-bending", "dream-walking", "soul-bound", "primordial"
+      ],
+      "items": [
+        "gauntlet", "crown", "orb", "monolith", "cube",
+        "spear", "heart", "eye", "brain", "hand",
+        "seed", "egg", "stone", "book", "mirror",
+        "sword", "shield", "ring", "key", "chalice",
+        "mask", "statue", "codex", "gate", "well"
+      ]
+    }
+  }
+}

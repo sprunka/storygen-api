@@ -33,7 +33,9 @@ class PromptController extends AbstractController
     /**
      * Valid component types
      */
-    private const VALID_COMPONENT_TYPES = ['adjectives', 'nouns', 'verbs', 'objects', 'modifiers', 'qualities', 'items'];
+    private const VALID_COMPONENT_TYPES = [
+        'adjectives', 'nouns', 'verbs', 'objects', 'modifiers', 'qualities', 'items'
+    ];
 
     /**
      * Valid component types per category
@@ -240,16 +242,17 @@ class PromptController extends AbstractController
      */
     private function getSeedLoader(): SeedLoader
     {
-        // Use reflection to get the SeedLoader from the PromptGenerator
         $reflection = new \ReflectionClass($this->promptGenerator);
         $property = $reflection->getProperty('seedLoader');
         $property->setAccessible(true);
-        return $property->getValue($this->promptGenerator);
+        $seedLoader = $property->getValue($this->promptGenerator);
+        $property->setAccessible(false);
+        return $seedLoader;
     }
 
     /**
      * Default invoke method that generates a complete story prompt
-     * 
+     *
      * @param Request $request The request object
      * @param Response $response The response object
      * @param array $args Route arguments
@@ -258,5 +261,38 @@ class PromptController extends AbstractController
     public function __invoke(Request $request, Response $response, array $args = []): Response
     {
         return $this->getPrompt($request, $response);
+    }
+
+    /**
+     * Get a random outgunned plot based on genre
+     *
+     * @param Request $request
+     * @param Response $response
+     * @return Response
+     */
+    public function getOutgunnedPlot(Request $request, Response $response): Response
+    {
+        $params = $request->getQueryParams();
+        $genre = $params['genre'] ?? 'all';
+
+        $validGenres = ['all', 'any', 'action', 'adventure', 'spy_thriller', 'blockbuster'];
+        if (!in_array($genre, $validGenres)) {
+            return $this->respondWithError(
+                $response,
+                'Invalid genre. Must be one of: ' . implode(', ', $validGenres),
+                400
+            );
+        }
+
+        try {
+            $plot = $this->promptGenerator->generateOutgunnedPlot($genre);
+            return $this->respondWithJson($response, $plot);
+        } catch (\Exception $e) {
+            return $this->respondWithError(
+                $response,
+                'Failed to generate plot: ' . $e->getMessage(),
+                500
+            );
+        }
     }
 }
